@@ -1,0 +1,14 @@
+.checkList--item {
+  border-bottom: 1px solid lightgrey;
+  padding: 10px 8px 10px 8px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.checkList--item__label {
+  font-size: 1.5em;
+  font-weight: lighter;
+  color: #494949;
+  margin-top: -4px;
+}

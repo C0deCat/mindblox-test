@@ -1,0 +1,18 @@
+.filters {
+  display: flex;
+  gap: 5px;
+}
+
+.filters__input {
+  display: none;
+}
+
+.filters__button {
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 2px 5px;
+}
+
+.filters__input:checked + .filters__button {
+  border: 1px solid #ead3d3;
+}

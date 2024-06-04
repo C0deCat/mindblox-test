@@ -1,0 +1,19 @@
+.todo-input {
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  font-family: "Mulish", sans-serif;
+  font-size: 1.5em;
+  font-weight: 200;
+  font-style: italic;
+  padding: 15px 15px 15px 45px;
+  outline: none;
+  text-overflow: ellipsis;
+  color: #494949;
+
+  background: no-repeat url("../media/arrowDown.svg");
+  background-color: #fefefe;
+  background-position: 8px 15px;
+
+  box-shadow: inset 0px -8px 3px -7px rgba(0, 0, 0, 0.1);
+}

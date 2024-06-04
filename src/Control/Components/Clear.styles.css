@@ -1,0 +1,14 @@
+.clearButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #737373;
+  font-family: "Mulish", sans-serif;
+  padding: 2px 5px;
+  box-sizing: border-box;
+}
+
+.clearButton:hover {
+  border-radius: 3px;
+  outline: 1px solid #ead3d3;
+}

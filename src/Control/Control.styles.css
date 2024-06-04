@@ -1,0 +1,9 @@
+.control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  font-size: 0.9em;
+  font-weight: lighter;
+  color: #737373;
+}

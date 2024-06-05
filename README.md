@@ -1,6 +1,7 @@
-# Getting Started with Create React App
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Node.js 22.2.0 was used. COMPATIBILITY WITH OTHER VERSIONS IS NOT GUARANTEED
+
+before running e2e-tests you need to run project locally (npm start)
 
 ## Available Scripts
 

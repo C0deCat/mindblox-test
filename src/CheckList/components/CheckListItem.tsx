@@ -5,11 +5,13 @@ import { Checkbox } from "./Checkbox";
 interface CheckListItemProps {
   checked: boolean;
   text: string;
+  onChange: (e: any) => void;
 }
 
 export const CheckListItem: React.FC<CheckListItemProps> = ({
   checked,
   text,
+  onChange,
 }) => {
   const textClasses = useMemo(() => {
     let classes = "checkList--item__label";
@@ -19,7 +21,7 @@ export const CheckListItem: React.FC<CheckListItemProps> = ({
 
   return (
     <li className="checkList--item">
-      <Checkbox checked={checked} />
+      <Checkbox checked={checked} onChange={onChange} />
       <span className={textClasses}>{text}</span>
     </li>
   );

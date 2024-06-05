@@ -1,10 +1,26 @@
-import React, { useContext, useMemo } from "react";
+import React, { useCallback, useContext, useMemo } from "react";
 import "./CheckList.styles.css";
 import { CheckListItem } from "./components/CheckListItem";
-import { FilterMode, TodoStateContext } from "../TodoContext";
+import {
+  FilterMode,
+  TodoDispatchContext,
+  TodoStateContext,
+} from "../TodoContext";
 
 export const CheckList: React.FC = () => {
   const { todos, filter } = useContext(TodoStateContext);
+  const dispatch = useContext(TodoDispatchContext);
+
+  const handleChange = useCallback(
+    (index: number) => (e: any) => {
+      dispatch({
+        type: "toggle_todo",
+        todoIndex: index,
+        newCompletedValue: !!e.target.checked,
+      });
+    },
+    [dispatch]
+  );
 
   const todoList = useMemo(() => {
     return todos
@@ -21,10 +37,15 @@ export const CheckList: React.FC = () => {
         }
         return true;
       })
-      .map((todo) => (
-        <CheckListItem checked={todo.completed} text={todo.text} />
+      .map((todo, index) => (
+        <CheckListItem
+          key={index}
+          checked={todo.completed}
+          text={todo.text}
+          onChange={handleChange(index)}
+        />
       ));
-  }, [todos, filter]);
+  }, [todos, filter, handleChange]);
 
   return <ul className="checkList">{todoList}</ul>;
 };

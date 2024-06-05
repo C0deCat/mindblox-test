@@ -32,6 +32,21 @@ export const reducer = (state: TodosState, action: any): TodosState => {
         todos: state.todos.filter((todo) => !todo.completed),
         filter: state.filter,
       };
+    case "add_todo":
+      return {
+        todos: [
+          ...state.todos,
+          { text: action.newTodo.text, completed: action.newTodo.completed },
+        ],
+        filter: state.filter,
+      };
+    case "toggle_todo":
+      const newTodos = state.todos.filter((todo) => true);
+      newTodos[action.todoIndex].completed = action.newCompletedValue;
+      return {
+        todos: newTodos,
+        filter: state.filter,
+      };
     default:
       break;
   }

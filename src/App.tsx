@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useEffect, useReducer } from "react";
 import "./App.css";
 import Title from "./Title";
 import TodoContainer from "./TodoContainer";
@@ -15,13 +15,22 @@ import {
 const App: React.FC = () => {
   const [todos, dispatch] = useReducer(reducer, {
     todos: [
-      { completed: true, text: "Пункт 1" },
-      { completed: false, text: "Пункт 2" },
-      { completed: false, text: "Пункт 3" },
-      { completed: true, text: "Пункт 4" },
+      { completed: true, text: "Открыть тудушки" },
+      {
+        completed: false,
+        text: "Ввести текст и нажать Enter чтобы добавить новую",
+      },
+      { completed: false, text: "Поиграться с фильтрами" },
+      { completed: false, text: "Clear completed чтобы удалить выполненные" },
+      { completed: true, text: "Вы великолепны" },
     ],
     filter: FilterMode.ALL,
   });
+
+  useEffect(() => {
+    dispatch({ type: "pull_from_localstorage" });
+    return () => dispatch({ type: "put_to_localstorage" });
+  }, [todos]);
 
   return (
     <div className="App">

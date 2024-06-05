@@ -11,7 +11,7 @@
   text-overflow: ellipsis;
   color: #494949;
 
-  background: no-repeat url("../media/arrowDown.svg");
+  background: no-repeat url("/src/media/arrowDown.svg");
   background-color: #fefefe;
   background-position: 8px 15px;
 

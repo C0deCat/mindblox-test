@@ -1,6 +1,12 @@
 .title {
-    font-weight: lighter;
-    color: #E9D9D9;
-    font-size: 8em;
-    margin: 0;
+  font-weight: lighter;
+  color: #e9d9d9;
+  font-size: 8em;
+  margin: 0;
+}
+
+@media (max-width: 500px) {
+  .title {
+    font-size: 5em;
+  }
 }

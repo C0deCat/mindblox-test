@@ -3,6 +3,8 @@
   overflow: hidden;
   width: 26px;
   height: 26px;
+  cursor: pointer;
+  flex-shrink: 0;
 }
 
 .checkbox__input {

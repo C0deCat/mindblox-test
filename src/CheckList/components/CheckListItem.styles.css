@@ -11,6 +11,8 @@
   font-weight: lighter;
   color: #494949;
   margin-top: -4px;
+  word-wrap: break-word;
+  overflow: hidden;
 }
 
 .checkList--item__label_checked {

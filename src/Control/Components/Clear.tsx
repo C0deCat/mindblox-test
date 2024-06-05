@@ -1,6 +1,17 @@
-import React from "react";
+import React, { useCallback, useContext } from "react";
 import "./Clear.styles.css";
+import { TodoDispatchContext } from "../../TodoContext";
 
 export const Clear: React.FC = () => {
-  return <button className="clearButton">Clear completed</button>;
+  const dispatch = useContext(TodoDispatchContext);
+
+  const handleClearCompleted = useCallback(() => {
+    dispatch({ type: "remove_completed_todos" });
+  }, [dispatch]);
+
+  return (
+    <button className="clearButton" onClick={handleClearCompleted}>
+      Clear completed
+    </button>
+  );
 };

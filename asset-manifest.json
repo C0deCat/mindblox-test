@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/mindblox-test/static/css/main.fe2d196f.css",
-    "main.js": "/mindblox-test/static/js/main.a04094df.js",
+    "main.js": "/mindblox-test/static/js/main.da267060.js",
     "static/js/453.ce31a2e6.chunk.js": "/mindblox-test/static/js/453.ce31a2e6.chunk.js",
     "index.html": "/mindblox-test/index.html",
     "static/media/arrowDown.svg": "/mindblox-test/static/media/arrowDown.a28c200a38ec3c1e03d7.svg",
     "main.fe2d196f.css.map": "/mindblox-test/static/css/main.fe2d196f.css.map",
-    "main.a04094df.js.map": "/mindblox-test/static/js/main.a04094df.js.map",
+    "main.da267060.js.map": "/mindblox-test/static/js/main.da267060.js.map",
     "453.ce31a2e6.chunk.js.map": "/mindblox-test/static/js/453.ce31a2e6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fe2d196f.css",
-    "static/js/main.a04094df.js"
+    "static/js/main.da267060.js"
   ]
 }

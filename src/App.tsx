@@ -5,31 +5,14 @@ import TodoContainer from "./TodoContainer";
 import Input from "./Input";
 import CheckList from "./CheckList";
 import Control from "./Control";
-import {
-  FilterMode,
-  TodoDispatchContext,
-  TodoStateContext,
-  reducer,
-} from "./TodoContext";
+import { TodoDispatchContext, TodoStateContext, reducer } from "./TodoContext";
+import { getInitialState, setStateToLocalstorage } from "./App.utils";
 
 const App: React.FC = () => {
-  const [todos, dispatch] = useReducer(reducer, {
-    todos: [
-      { completed: true, text: "Открыть тудушки" },
-      {
-        completed: false,
-        text: "Ввести текст и нажать Enter чтобы добавить новую",
-      },
-      { completed: false, text: "Поиграться с фильтрами" },
-      { completed: false, text: "Clear completed чтобы удалить выполненные" },
-      { completed: true, text: "Вы великолепны" },
-    ],
-    filter: FilterMode.ALL,
-  });
+  const [todos, dispatch] = useReducer(reducer, getInitialState());
 
   useEffect(() => {
-    dispatch({ type: "pull_from_localstorage" });
-    return () => dispatch({ type: "put_to_localstorage" });
+    setStateToLocalstorage(todos);
   }, [todos]);
 
   return (

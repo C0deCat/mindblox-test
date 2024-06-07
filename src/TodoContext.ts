@@ -6,7 +6,7 @@ export enum FilterMode {
   COMPLETED = "COMPLETED",
 }
 
-interface TodosState {
+export interface TodosState {
   todos: {
     text: string;
     completed: boolean;
@@ -47,17 +47,6 @@ export const reducer = (state: TodosState, action: any): TodosState => {
         todos: newTodos,
         filter: state.filter,
       };
-    case "put_to_localstorage":
-      localStorage.setItem("todos", JSON.stringify(state));
-      return state;
-    case "pull_from_localstorage":
-      const stateString = localStorage.getItem("todos");
-      if (stateString === null) {
-        return state;
-      } else {
-        const newState = JSON.parse(stateString);
-        return newState;
-      }
     default:
       break;
   }
